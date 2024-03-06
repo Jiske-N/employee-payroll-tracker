@@ -73,13 +73,8 @@ return listOfEmployees;
 
 // Display the average salary
 // This function will take in the generated array of employees and log the average salary and number of employees to the console.  
-
 // You should use a template literal string for this task.
 const displayAverageSalary = function(employeesArray) {
-  
-  // console.log(employeesArray);
-  // console.log(displayEmployees);
-
 
   // create a value which is the sum of all salaries
   let sumOfAllSalaries = 0;
@@ -94,49 +89,16 @@ const displayAverageSalary = function(employeesArray) {
   console.log(`The average salary between our ${employeesArray.length} employee(s) is $${sumOfAllSalaries/employeesArray.length}`);
 };
 
-
-// let testEmployees = [
-// { 
-//   firstName: "Sam",
-//   lastName: "Smith",
-//   salary: "$100000"
-// },
-// { 
-//   firstName: "Suzy",
-//   lastName: "Sampson",
-//   salary: "$200000"
-// },
-// ];
-
-// let averageSalaryTest = 0; 
-
-// for (let index = 0; index < testEmployees.length; index++) {
-//   averageSalaryTest += parseInt(testEmployees[index].salary.replace("$", ""), 10);
-// }
-
-// console.log (`Average salary is $${averageSalaryTest}`);
-
-// let averageSalaryTestAverage = averageSalaryTest/testEmployees.length;
-
-// console.log(averageSalaryTestAverage);
-
-
-// console.log (`Average salary is $${averageSalaryTest}`); // Average salary is $300000
-
-// console.log(averageSalaryTestAverage);
-// console.log("delete later" + Array.prototype.join.call(testEmployees, "+")); // [object Object]+[object Object]
-
 // _____________________________________________________________________________________________________________________________________________________
 
 // Select a random employee
 // This function will take in the generated array of employees, randomly select one employee, and use a template literal to log their full name to the console.  
-// The built in `Math` object can help with random number generation: ([MDN Web Docs on `Math.random`]
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+let randomlySelectOneEmployee = (employeesArray[(Math.floor(Math.random() * employeesArray.length))]);
+console.log(`Congratulations to ${randomlySelectOneEmployee.firstName} ${randomlySelectOneEmployee.lastName}, our random drawing winner!`);
 }
 
-// (employeesArray[(Math.floor(Math.random() * computerSelection.length))])
-// console.log first name and last name selected above template literally
 // ______________________________________________________________________________________________________________________________________________________
 /*
   ====================

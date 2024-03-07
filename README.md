@@ -1,125 +1,56 @@
-# 03 JavaScript: Employee Payroll Tracker
+# Employee Payroll Tracker
 
-## Your Task
+## Link & Contents
+- [The Deployed Page](https://jiske-n.github.io/employee-payroll-tracker/)
+- [Further Goals](#further-goals)
+- [Potential Issues/Improvements](#potential-issuesimprovements)
+- [Key Learnings](#key-learnings)
+- [Contributing and Feedback](#contributing-and-feedback)
+- [Credits](#credits)
+- [Licence](#licence)
 
-This week's Challenge requires you to modify starter code to create an application that enables a payroll manager to view and manage employee payroll data. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+## The Employee Payroll Tracker
 
-## User Story
+This page was designed for an employer to be able to input employee names wages and be able to see a table showing all of the input data. Other features include:
+-Calculating the average salary of all employees which is shown in the console.
+-Randomly selecting one of the employees to be shown in the console.
 
-```md
-AS A payroll manager
-I WANT AN employee payroll tracker
-SO THAT I can see my employees' payroll data and properly budget for the company
-```
+Goals included, ensuring the table and calculations worked regardless of whether incorrect or incomplete data was added.
 
-## Acceptance Criteria
+![Picture of the Employee Payroll Tracker](./Assets/employee-payroll-tracker-screenshot.png)
+- [The Deployed Page](https://jiske-n.github.io/employee-payroll-tracker/)
 
-```md
-GIVEN an employee payroll tracker
-WHEN I click the "Add employee" button
-THEN I am presented with a series of prompts asking for first name, last name, and salary
-WHEN I finish adding an employee
-THEN I am prompted to continue or cancel
-WHEN I choose to continue
-THEN I am prompted to add a new employee
-WHEN I choose to cancel
-THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
-```
+## Further Goals
 
-## Mock-Up
+Other goals include:
+-Writing a good README.
+-Ensuring commenting is folowing best practices and in place for ease of future alteration.
+-Have all elements of the page working without errors.
 
-The following images show the web application's appearance and functionality:
+## Potential Issues/Improvements
 
-![Animation shows input of employees to an employee payroll tracker.](./Assets/03-javascript-homework-demo.gif)
+- Condensing some of the code. For example replacing the section converting the first letter to capitalise with a function achieving the same.
+- Unsure if the balance for commenting is about right or too sparse/many
+- Trying to convert code to be uniform and follow best practice
 
-![Shows employee information in the console of an employee payroll tracker.](./Assets/03-javascript-homework-console-demo.png)
+## Key Learnings
 
-## Getting Started
+The biggest learning points and hurdles I faced revolved around working out how different elements linked together.
 
-You will be responsible for filling out the following functions:
+Other learnings include:
+- Parse int and float usage.
+- Getting a number to show to x decimal places.
+- Hopefully, improved commenting.
+- Converting units to string and numbers.
 
-* `collectEmployees`: This function will allow a user to add multiple employees to display on the page.  The user will need to enter the first name, last name, and salary of each employee, then have the option to keep adding employees until they choose to stop. A `while` loop will be needed here ([MDN Web Docs on `while` loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)) The salary will need to be entered as a number, otherwise it should default to $0.  The `isNaN` function can help with this: ([MDN Web Docs on isNaN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN)) This function should return an array of objects, like the following example.  Reference the [MDN Web Docs on return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return):
+## Contributing and Feedback
 
-```javascript
-    [
-        {
-            firstName:"John",
-            lastName:"Smith",
-            salary:12345
-        },
-        {
-            firstName:"Jane",
-            lastName:"Doe",
-            salary:54321
-        }
-    ]
-```
+If you find any issues or have contributions or feedback you can do so by opening an [issue](https://github.com/Jiske-N/employee-payroll-tracker/issues) on Github.
 
-* `displayAverageSalary`: This function will take in the generated array of employees and log the average salary and number of employees to the console.  You should use a template literal string for this task.
+## Credits
 
-* `getRandomEmployee`: This function will take in the generated array of employees, randomly select one employee, and use a template literal to log their full name to the console.  The built in `Math` object can help with random number generation: ([MDN Web Docs on `Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random))
+Starter code provided by edX/Monash University
 
-The provided starter code includes the `displayEmployees` and `trackEmployeeData` functions. These functions are complete and working. You do not have to modify any code for the following functions:
+## Licence
 
-* `displayEmployees`: This function will take in an array of employees and render each employee to an HTML table.
-
-* `trackEmployeeData`: This function will execute when the "Add Employees" button is clicked. It will take the array generated in your `collectEmployees` function, sort the employees by last name, and place them on a table on the page using the provided `displayEmployees` function.  Additionally, the function will execute the `displayAverageSalary` function to log the average employee salary to the console, and execute the `getRandomEmployee` function to log a random employees information to the console.
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+None presently. 

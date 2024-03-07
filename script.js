@@ -1,79 +1,74 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-// Collect employee data
-  // This function will allow a user to add multiple employees to display on the page.  The user will need to enter the first name, last name, and salary of each employee, 
-  // then have the option to keep adding employees until they choose to stop.
-  // The salary will need to be entered as a number, otherwise it should default to $0.
-  // This function should return an array of objects.
+// collect employee data to be used for the other functions
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
 
-// while window confirm true loop back to prompt for first name
-let enterAnotherEmployee = true
+  // while window confirm true loop back to prompt for first name
+  let enterAnotherEmployee = true
 
-// an array to house the newEmployee objects created below
-const listOfEmployees = [
-]
+  // an array to house the newEmployee objects created below
+  const listOfEmployees = [
+  ]
 
-// loop to keep adding employees until enter another employee is false
-while (enterAnotherEmployee) {
+  // loop to keep adding employees until enter another employee is false
+  while (enterAnotherEmployee) {
 
-// prompt for first name
-const employeeFirstName = prompt("Enter employees first name:", "");
-console.log ("delete later" + employeeFirstName); // log 1
+    // prompt for first name
+    const employeeFirstName = prompt("Enter employees first name:", "");
 
-// prompt for last name
-const employeeLastName = prompt("Enter employees last name:", "");
-console.log ("delete later" + employeeLastName); // log 2
+    // capitalise first letter of employeeFirstName so that all items are uniform and sort properly later 
+    // definetly not the most conscise method for achieving this but I went with simple as it's the first time I've done it
+    const employeeFirstNameFirstLetter = employeeFirstName.charAt(0);
 
-// prompt for salary
-let employeeSalary = prompt("Enter employees salary:", "");
+    const employeeFirstNameFirstLetterCap = employeeFirstNameFirstLetter.toUpperCase();
 
-// if salary == nan, default to $0 otherwise put a $ sign in front
-if (isNaN(employeeSalary) === true) {
-  employeeSalary = "$0";
-} else {
-  employeeSalary = (`$${employeeSalary}`)
-}
-console.log ("delete later" + `${employeeSalary}`); // log 3
+    const employeeFirstNameRemainingLetters = employeeFirstName.slice(1);
 
-// create object containing first name, last name and salary
-const newEmployee = {
-  firstName: employeeFirstName,
-  lastName: employeeLastName,
-  salary: employeeSalary,
-}
-console.log ("delete later" + newEmployee); // log 4
+    const employeeFirstNameCap = employeeFirstNameFirstLetterCap + employeeFirstNameRemainingLetters;
 
-// add the newly created employee to the end of the listOfEmployees array
-listOfEmployees.push (newEmployee);
-console.log ("delete later" + listOfEmployees); 
+    // prompt for last name
+    const employeeLastName = prompt("Enter employees last name:", "");
 
-console.log ("delete later" + "confirmation of addition of object") // log 5
+    // capitalise first letter of employeeLastName so that all items are uniform and sort properly later 
+    // again definetly not the most conscise method for achieving this but I went with simple as it's the first time I've done it
+    const employeeLastNameFirstLetter = employeeLastName.charAt(0);
 
-// window.confirm keep adding employees if true continues while loop if false breaks loop
-enterAnotherEmployee = window.confirm ("Would you like to add another employee?")
-console.log (enterAnotherEmployee) // log 6
-}
-console.log ("delete later" + "this is list of employees")
-console.log ("delete later" + listOfEmployees); 
+    const employeeLastNameFirstLetterCap = employeeLastNameFirstLetter.toUpperCase();
 
-// make a the list of employees array created at the top of the function available once the function ends.
-return listOfEmployees;
+    const employeeLastNameRemainingLetters = employeeLastName.slice(1);
+
+    const employeeLastNameCap = employeeLastNameFirstLetterCap + employeeLastNameRemainingLetters;
+
+    // prompt for salary
+    let employeeSalary = prompt("Enter employees salary:", "");
+
+    // if salary == nan, default to $0 otherwise put a $ sign in front
+    if (isNaN(employeeSalary) === true) {
+      employeeSalary = "$0";
+    } else {
+      employeeSalary = (`$${employeeSalary}`)
+    }
+
+    // create object containing first name, last name and salary
+    const newEmployee = {
+      firstName: employeeFirstNameCap,
+      lastName: employeeLastNameCap,
+      salary: employeeSalary,
+    }
+
+    // add the newly created employee to the end of the listOfEmployees array
+    listOfEmployees.push (newEmployee);
+
+    // window.confirm keep adding employees if true continues while loop if false breaks loop
+    enterAnotherEmployee = window.confirm ("Would you like to add another employee?")
+  }
+
+  // make a the list of employees array created at the top of the function available once the function ends.
+  return listOfEmployees;
 };
 
-//click add employees
-// addEmployeesBtn.addEventListener("click", collectEmployees);
-
-// document.getElementById('#add-employees-btn').addEventListener("click", collectEmployees);
-
-
-//___________________________________________________________________________________________________________________________________________________
-
-// Display the average salary
-// This function will take in the generated array of employees and log the average salary and number of employees to the console.  
-// You should use a template literal string for this task.
+// display the calculate the average salary of all employees entered and display it in the console log
 const displayAverageSalary = function(employeesArray) {
 
   // create a value which is the sum of all salaries
@@ -89,15 +84,13 @@ const displayAverageSalary = function(employeesArray) {
   console.log(`The average salary between our ${employeesArray.length} employee(s) is $${sumOfAllSalaries/employeesArray.length}`);
 };
 
-// _____________________________________________________________________________________________________________________________________________________
-
-// Select a random employee
-// This function will take in the generated array of employees, randomly select one employee, and use a template literal to log their full name to the console.  
+// select a random employee employee from all employees entered using and designate them as the random draw winner in the console log
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
-let randomlySelectOneEmployee = (employeesArray[(Math.floor(Math.random() * employeesArray.length))]);
-console.log(`Congratulations to ${randomlySelectOneEmployee.firstName} ${randomlySelectOneEmployee.lastName}, our random drawing winner!`);
-}
+  // selecte a random object from the employeesArray
+  let randomlySelectOneEmployee = (employeesArray[(Math.floor(Math.random() * employeesArray.length))]);
+  // console log the first and last name from the randomly selected object with a message in template literal string
+  console.log(`Congratulations to ${randomlySelectOneEmployee.firstName} ${randomlySelectOneEmployee.lastName}, our random drawing winner!`);
+};
 
 // ______________________________________________________________________________________________________________________________________________________
 /*
